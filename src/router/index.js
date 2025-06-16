@@ -4,6 +4,8 @@ import OTPConfirmation from '../components/OTPConfirmation.vue'
 import Dashboard from '../components/Dashboard.vue'
 import Contact from '../components/Contact.vue'
 import Product from '../components/Product.vue'
+import BookingService from '../components/BookingService.vue'
+import OrderService from '../components/OrderService.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -32,6 +34,16 @@ const router = createRouter({
       path: '/product',
       name: 'Product',
       component: Product
+    },
+    {
+      path: '/booking-service',
+      name: 'BookingService',
+      component: BookingService
+    },
+    {
+      path: '/order-service',
+      name: 'OrderService',
+      component: OrderService
     }
   ]
 })

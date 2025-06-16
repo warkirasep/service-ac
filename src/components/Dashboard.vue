@@ -12,6 +12,18 @@
             <router-link to="/dashboard" class="nav-link active">Dashboard</router-link>
             <router-link to="/contact" class="nav-link">Contact</router-link>
             <router-link to="/product" class="nav-link">Menu Produk</router-link>
+            <div class="dropdown" @mouseenter="showDropdown = true" @mouseleave="showDropdown = false">
+              <div class="nav-link dropdown-toggle">
+                Transaction
+                <svg class="dropdown-arrow" :class="{ 'rotated': showDropdown }" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </div>
+              <div class="dropdown-menu" :class="{ 'show': showDropdown }">
+                <router-link to="/booking-service" class="dropdown-item">Booking Service AC</router-link>
+                <router-link to="/order-service" class="dropdown-item">Order Service AC</router-link>
+              </div>
+            </div>
           </nav>
         </div>
         <div class="header-right">
@@ -136,6 +148,7 @@ import { useRouter } from 'vue-router'
 
 const router = useRouter()
 const selectedPeriod = ref('30d')
+const showDropdown = ref(false)
 
 const userInfo = ref({
   name: 'John Doe',
@@ -354,6 +367,73 @@ onMounted(() => {
 .nav-link.router-link-active {
   color: #667eea;
   background-color: #edf2f7;
+}
+
+/* Dropdown Styles */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.dropdown-arrow {
+  transition: transform 0.2s ease;
+}
+
+.dropdown-arrow.rotated {
+  transform: rotate(180deg);
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  min-width: 200px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.2s ease;
+  z-index: 1000;
+}
+
+.dropdown-menu.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown-item {
+  display: block;
+  padding: 12px 16px;
+  text-decoration: none;
+  color: #4a5568;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  border-bottom: 1px solid #f7fafc;
+}
+
+.dropdown-item:last-child {
+  border-bottom: none;
+}
+
+.dropdown-item:hover {
+  background-color: #f7fafc;
+  color: #667eea;
+}
+
+.dropdown-item.router-link-active {
+  background-color: #edf2f7;
+  color: #667eea;
 }
 
 .header-left h1 {
