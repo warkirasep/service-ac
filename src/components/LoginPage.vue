@@ -65,7 +65,7 @@ const handleLogin = async () => {
   setTimeout(() => {
     isLoading.value = false
     // Navigate to OTP page after successful login
-    router.push('/otp')
+    router.push('/otp-confirmation')
   }, 1500)
 }
 </script>
