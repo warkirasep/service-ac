@@ -22,6 +22,11 @@
               <div class="dropdown-menu" :class="{ 'show': showDropdown }">
                 <router-link to="/booking-service" class="dropdown-item">Booking Service AC</router-link>
                 <router-link to="/order-service" class="dropdown-item">Order Service AC</router-link>
+                <router-link to="/service-income" class="dropdown-item">Pendapatan Service AC</router-link>
+                <router-link to="/service-expense" class="dropdown-item">Pengeluaran Service AC</router-link>
+                <router-link to="/invoice" class="dropdown-item">Faktur Service AC</router-link>
+                <router-link to="/monthly-report" class="dropdown-item">Laporan Bulanan</router-link>
+                <router-link to="/personal-settings" class="dropdown-item">Personal Settings</router-link>
               </div>
             </div>
           </nav>

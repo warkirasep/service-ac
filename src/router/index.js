@@ -6,6 +6,12 @@ import Contact from '../components/Contact.vue'
 import Product from '../components/Product.vue'
 import BookingService from '../components/BookingService.vue'
 import OrderService from '../components/OrderService.vue'
+import ServiceIncome from '../components/ServiceIncome.vue'
+import ServiceExpense from '../components/ServiceExpense.vue'
+import MonthlyReport from '../components/MonthlyReport.vue'
+import PersonalSettings from '../components/PersonalSettings.vue'
+import Invoice from '../components/Invoice.vue'
+import InvoicePDF from '../components/InvoicePDF.vue'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -42,9 +48,40 @@ const router = createRouter({
     },
     {
       path: '/order-service',
-      name: 'OrderService',
+      name: 'order-service',
       component: OrderService
-    }
+    },
+    {
+      path: '/invoice',
+      name: 'Invoice',
+      component: Invoice
+    },
+    {
+      path: '/invoice-pdf',
+      name: 'InvoicePDF',
+      component: InvoicePDF,
+      props: true
+    },
+    {
+    path: '/service-income',
+    name: 'service-income',
+    component: ServiceIncome
+  },
+  {
+    path: '/service-expense',
+    name: 'service-expense',
+    component: ServiceExpense
+  },
+  {
+    path: '/monthly-report',
+    name: 'monthly-report',
+    component: MonthlyReport
+  },
+  {
+    path: '/personal-settings',
+    name: 'personal-settings',
+    component: PersonalSettings
+  },
   ]
 })
 
